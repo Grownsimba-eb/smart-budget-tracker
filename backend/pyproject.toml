@@ -1,0 +1,21 @@
+[project]
+name = "smart-budget-tracker-backend"
+version = "0.1.0"
+description = "Smart Budget Tracker backend with FastAPI"
+authors = [
+    {name = "Elly",email = "ellybwire31@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "uvicorn (>=0.38.0,<0.39.0)",
+    "fastapi (>=0.121.2,<0.122.0)"
+]
+packages = [{ include = "smart_budget_tracker_backend" }]
+
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
