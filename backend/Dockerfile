@@ -14,16 +14,11 @@ RUN pip install poetry
 # Copy dependency files first
 COPY pyproject.toml poetry.lock* ./
 
-# Tell Poetry to use Python 3.11 (now that pyproject.toml is present)
-RUN poetry env use python3.11
-
-# Install dependencies
+# Install dependencies (no project package)
 RUN poetry install --no-root
-
-
 
 # Copy the rest of the project
 COPY . .
 
 # Run FastAPI with Uvicorn
-CMD ["poetry", "run", "uvicorn", "smart_budget_tracker_backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["poetry", "run", "uvicorn", "smart_budget.main:app", "--host", "0.0.0.0", "--port", "8000"]

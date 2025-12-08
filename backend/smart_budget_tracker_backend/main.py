@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="Smart Budget Tracker Backend")
+app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"message": "Backend is alive 🚀"}
+@app.get("/health")
+def health():
+    return {"status": "ok"}

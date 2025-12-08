@@ -1,21 +1,21 @@
-[project]
-name = "smart-budget-tracker-backend"
+[tool.poetry]
+name = "smart-budget-tracker"
 version = "0.1.0"
-description = "Smart Budget Tracker backend with FastAPI"
-authors = [
-    {name = "Elly",email = "ellybwire31@gmail.com"}
-]
-license = {text = "MIT"}
-readme = "README.md"
-requires-python = ">=3.11,<3.13"
-dependencies = [
-    "uvicorn (>=0.38.0,<0.39.0)",
-    "fastapi (>=0.121.2,<0.122.0)"
-]
-packages = [{ include = "smart_budget_tracker_backend" }]
+description = "Smart Budget Tracker backend service"
+authors = ["Elly <ellybwire31@gmail.com>"]
 
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+fastapi = "^0.115"
+uvicorn = {extras = ["standard"], version = "^0.32"}
+sqlalchemy = "^2.0"
+alembic = "^1.13"
+psycopg2-binary = "^2.9"
+python-dotenv = "^1.0"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
